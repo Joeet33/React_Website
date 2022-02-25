@@ -1,10 +1,10 @@
 import React from 'react'
 import './index.css'
 
-export default function Header() {
+export default function Nav() {
   return (
 
-    <div className='header'>
+    <div className='nav'>
         <h1 className='home'>Home</h1>
     <nav className='nav'>
     <ul className='nav__links'>
