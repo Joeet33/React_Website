@@ -22,12 +22,10 @@ export const NavContainer = styled.div`
     
     a {
         transition: all 0.3s ease 0s;
-    }
 
-    &:hover {
-       a {
-        color: aqua;
+        &:hover {
+    
+            color: aqua;        
         }
-        
     }
 `
