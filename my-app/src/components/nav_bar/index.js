@@ -1,10 +1,13 @@
-import React from "react"
+import { Link } from "react-router-dom"
+import { ROUTER_PATHS } from "../../routerPaths"
 import { NavContainer } from "./index.styles"
 
 export const Nav = () => {
   return (
     <NavContainer>
-      <h1>Home</h1>
+      <h1>
+        <Link to={ROUTER_PATHS.HOME}>home</Link>
+      </h1>
       <nav>
         <ul className="nav__links">
           <li>
@@ -14,7 +17,7 @@ export const Nav = () => {
             <a href="#">Search</a>
           </li>
           <li>
-            <a href="#">Sign up</a>
+            <Link to={ROUTER_PATHS.SIGNUP}>Sign up</Link>
           </li>
         </ul>
       </nav>

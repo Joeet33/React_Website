@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import styled from "styled-components"
 
 export const NavContainer = styled.div`
@@ -18,13 +19,13 @@ export const NavContainer = styled.div`
   li {
     display: inline-block;
     padding: 0px 20px;
-  }
 
-  a {
-    transition: all 0.3s ease 0s;
+    a {
+      transition: all 0.3s ease 0s;
 
-    &:hover {
-      color: aqua;
+      &:hover {
+        color: aqua;
+      }
     }
   }
 `
