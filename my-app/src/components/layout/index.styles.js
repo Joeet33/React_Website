@@ -1,12 +1,11 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 export const LayoutContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 `
 
 export const LayoutWrap = styled.div`
-    flex: 1;
+  flex: 1;
 `
-
