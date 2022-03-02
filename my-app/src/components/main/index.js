@@ -1,9 +1,10 @@
 import React from 'react'
 
-export default function Main() {
+export const Main = () => {
   return (
     <>
     <div className='main'>Lorem Ipsum</div>
     </>
   )
 }
+
