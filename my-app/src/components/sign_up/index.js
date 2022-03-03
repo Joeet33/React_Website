@@ -1,13 +1,47 @@
+import TextField from "@material-ui/core/TextField"
+import { makeStyles } from "@material-ui/core/styles"
+import Button from "@material-ui/core/Button"
+import { LoginContainer } from "./index.styles"
 import { Link } from "react-router-dom"
 import { ROUTER_PATHS } from "../../routerPaths"
-import { SignupContainer } from "./index.styles"
 
-export const Signup = () => {
+const useStyles = makeStyles((theme) => ({
+  root: {
+    "& .MuiTextField-root": {
+      margin: theme.spacing(1),
+      width: "25ch",
+    },
+  },
+}))
+
+export default function Signup() {
+  const classes = useStyles()
+
   return (
-    <SignupContainer>
-      <Link to={ROUTER_PATHS.HOME}>
-        <button></button>
-      </Link>
-    </SignupContainer>
+    <form className={classes.root} noValidate autoComplete="off">
+      <LoginContainer>
+        <TextField
+          required
+          id="standard-required"
+          label="Required"
+          defaultValue="Email@gmail.com"
+        />
+        <TextField
+          id="standard-password-input"
+          label="Password"
+          type="password"
+          autoComplete="current-password"
+        />
+        <TextField
+          id="standard-password-input"
+          label="Confirm Password"
+          type="password"
+          autoComplete="current-password"
+        />
+        <Button variant="contained" color="primary">
+          Sign Up
+        </Button>
+      </LoginContainer>
+    </form>
   )
 }

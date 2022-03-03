@@ -17,7 +17,7 @@ export const Nav = () => {
             <a href="#">Search</a>
           </li>
           <li>
-            <Link to={ROUTER_PATHS.SIGNUP}>Sign up</Link>
+            <Link to={ROUTER_PATHS.LOGIN}>Login</Link>
           </li>
         </ul>
       </nav>
