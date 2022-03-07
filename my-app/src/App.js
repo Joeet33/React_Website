@@ -4,7 +4,7 @@ import { ROUTER_PATHS } from "./routerPaths"
 import { Nav } from "./components/nav_bar/"
 import { Main } from "./components/main/"
 import { Layout } from "./components/layout"
-import Login from "./components/login"
+import { Login } from "./components/login"
 import Signup from "./components/sign_up"
 
 function App() {

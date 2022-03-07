@@ -1,41 +1,39 @@
-import TextField from "@material-ui/core/TextField"
-import { makeStyles } from "@material-ui/core/styles"
+import React from "react"
+import { useForm, Controller } from "react-hook-form"
+import { LoginContainer } from "../sign_up/index.styles"
 import Button from "@material-ui/core/Button"
-import { LoginContainer } from "./index.styles"
-import { Link } from "react-router-dom"
-import { ROUTER_PATHS } from "../../routerPaths"
+import { TextField } from "@material-ui/core"
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    "& .MuiTextField-root": {
-      margin: theme.spacing(1),
-      width: "25ch",
+export const Login = () => {
+  const { control, handleSubmit } = useForm({
+    defaultValues: {
+      email: "",
+      password: "",
     },
-  },
-}))
-
-export default function Login() {
-  const classes = useStyles()
+  })
+  const onSubmit = (data) => console.log(data)
 
   return (
-    <form className={classes.root} noValidate autoComplete="off">
+    <form onSubmit={handleSubmit(onSubmit)}>
       <LoginContainer>
-        <TextField
-          required
-          id="standard-required"
-          label="Required"
-          defaultValue="Email@gmail.com"
+        <Controller
+          name="email"
+          control={control}
+          render={({ field }) => (
+            <TextField {...field} required label="Email" />
+          )}
         />
-        <TextField
-          id="standard-password-input"
-          label="Password"
-          type="password"
-          autoComplete="current-password"
+        <Controller
+          name="password"
+          control={control}
+          render={({ field }) => (
+            <TextField {...field} required label="Password" type="password" />
+          )}
         />
-        <Button variant="contained" color="primary">
-          Login
+
+        <Button variant="contained" color="primary" type="submit">
+          Sign Up
         </Button>
-        <Link to={ROUTER_PATHS.SIGNUP}>Create an account</Link>
       </LoginContainer>
     </form>
   )
