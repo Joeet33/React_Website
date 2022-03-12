@@ -1,47 +1,66 @@
-import TextField from "@material-ui/core/TextField"
-import { makeStyles } from "@material-ui/core/styles"
+import React, { useState } from "react"
+import { Login } from "../login"
+import { SignupContainer } from "../sign_up/index.styles"
 import Button from "@material-ui/core/Button"
-import { LoginContainer } from "./index.styles"
-import { Link } from "react-router-dom"
+import { TextField } from "@material-ui/core"
 import { ROUTER_PATHS } from "../../routerPaths"
+import { Link } from "react-router-dom"
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    "& .MuiTextField-root": {
-      margin: theme.spacing(1),
-      width: "25ch",
-    },
-  },
-}))
+export function Signup() {
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
 
-export default function Signup() {
-  const classes = useStyles()
+  const [flag, setFlag] = useState(false)
+  const [login, setLogin] = useState(true)
+  const [info, setInfo] = useState(true)
+
+  // on form submit...
+  function handleFormSubmit(e) {
+    e.preventDefault()
+
+    if (!email || !password) {
+      setFlag(true)
+    } else {
+      setFlag(false)
+      localStorage.setItem("hardikSubmissionEmail", JSON.stringify(email))
+      localStorage.setItem("hardikSubmissionPassword", JSON.stringify(password))
+      console.log("Saved in Local Storage")
+
+      setLogin(!login)
+    }
+  }
 
   return (
-    <form className={classes.root} noValidate autoComplete="off">
-      <LoginContainer>
-        <TextField
-          required
-          id="standard-required"
-          label="Required"
-          defaultValue="Email@gmail.com"
-        />
-        <TextField
-          id="standard-password-input"
-          label="Password"
-          type="password"
-          autoComplete="current-password"
-        />
-        <TextField
-          id="standard-password-input"
-          label="Confirm Password"
-          type="password"
-          autoComplete="current-password"
-        />
-        <Button variant="contained" color="primary">
-          Sign Up
-        </Button>
-      </LoginContainer>
-    </form>
+    <>
+      {login ? (
+        <SignupContainer onSubmit={handleFormSubmit}>
+          <h3>Register</h3>
+
+          <TextField
+            required
+            label="Email"
+            type="email"
+            onChange={(event) => setEmail(event.target.value)}
+          ></TextField>
+
+          <TextField
+            required
+            label="Password"
+            type="password"
+            onChange={(event) => setPassword(event.target.value)}
+          ></TextField>
+
+          <Button variant="contained" color="primary" type="submit">
+            Sign Up
+          </Button>
+
+          <div>
+            Already registered <Link to={ROUTER_PATHS.LOGIN}>log in?</Link>
+          </div>
+        </SignupContainer>
+      ) : (
+        <Login />
+      )}
+    </>
   )
 }

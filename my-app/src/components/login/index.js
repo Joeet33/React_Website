@@ -1,40 +1,68 @@
-import React from "react"
-import { useForm, Controller } from "react-hook-form"
-import { LoginContainer } from "../sign_up/index.styles"
+import React, { useState } from "react"
+import { LoginContainer } from "./index.styles"
 import Button from "@material-ui/core/Button"
 import { TextField } from "@material-ui/core"
+import { Link } from "react-router-dom"
+import { ROUTER_PATHS } from "../../routerPaths"
+import { Main } from "../main"
 
-export const Login = () => {
-  const { control, handleSubmit } = useForm({
-    defaultValues: {
-      email: "",
-      password: "",
-    },
-  })
-  const onSubmit = (data) => console.log(data)
+export function Login() {
+  const [emaillog, setEmaillog] = useState(" ")
+  const [passwordlog, setPasswordlog] = useState(" ")
+
+  const [flag, setFlag] = useState(false)
+
+  const [home, setHome] = useState(true)
+
+  function handleLogin(e) {
+    e.preventDefault()
+    let pass = localStorage
+      .getItem("hardikSubmissionPassword")
+      .replace(/"/g, "")
+    let mail = localStorage.getItem("hardikSubmissionEmail").replace(/"/g, "")
+    // .replace(/"/g,"") is used to remove the double quotes for the string
+
+    if (!emaillog || !passwordlog) {
+      setFlag(true)
+      console.log("EMPTY")
+    } else if (passwordlog !== pass || emaillog !== mail) {
+      setFlag(true)
+    } else {
+      setHome(!home)
+      setFlag(false)
+    }
+  }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <LoginContainer>
-        <Controller
-          name="email"
-          control={control}
-          render={({ field }) => (
-            <TextField {...field} required label="Email" />
-          )}
-        />
-        <Controller
-          name="password"
-          control={control}
-          render={({ field }) => (
-            <TextField {...field} required label="Password" type="password" />
-          )}
-        />
+    <div>
+      {home ? (
+        <LoginContainer onSubmit={handleLogin}>
+          <h3>LogIn</h3>
+          <TextField
+            label="Email"
+            type="email"
+            onChange={(event) => setEmaillog(event.target.value)}
+          >
+            <label>Email</label>
+          </TextField>
 
-        <Button variant="contained" color="primary" type="submit">
-          Sign Up
-        </Button>
-      </LoginContainer>
-    </form>
+          <TextField
+            label="Password"
+            type="password"
+            onChange={(event) => setPasswordlog(event.target.value)}
+          >
+            <label>Password</label>
+          </TextField>
+
+          <Button variant="contained" color="primary" type="submit">
+            Login
+          </Button>
+
+          <Link to={ROUTER_PATHS.LOGIN}>Register Here</Link>
+        </LoginContainer>
+      ) : (
+        <Main />
+      )}
+    </div>
   )
 }
