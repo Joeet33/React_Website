@@ -22,8 +22,8 @@ export function Signup() {
       setFlag(true)
     } else {
       setFlag(false)
-      localStorage.setItem("hardikSubmissionEmail", JSON.stringify(email))
-      localStorage.setItem("hardikSubmissionPassword", JSON.stringify(password))
+      localStorage.setItem("SubmissionEmail", JSON.stringify(email))
+      localStorage.setItem("SubmissionPassword", JSON.stringify(password))
       console.log("Saved in Local Storage")
 
       setLogin(!login)
@@ -38,6 +38,7 @@ export function Signup() {
 
           <TextField
             required
+            autoComplete="email"
             label="Email"
             type="email"
             onChange={(event) => setEmail(event.target.value)}
@@ -45,6 +46,7 @@ export function Signup() {
 
           <TextField
             required
+            autoComplete="new-password"
             label="Password"
             type="password"
             onChange={(event) => setPassword(event.target.value)}
@@ -55,7 +57,7 @@ export function Signup() {
           </Button>
 
           <div>
-            Already registered <Link to={ROUTER_PATHS.LOGIN}>log in?</Link>
+            Already registered <Link to={ROUTER_PATHS.LOGIN}>login?</Link>
           </div>
         </SignupContainer>
       ) : (

@@ -16,10 +16,8 @@ export function Login() {
 
   function handleLogin(e) {
     e.preventDefault()
-    let pass = localStorage
-      .getItem("hardikSubmissionPassword")
-      .replace(/"/g, "")
-    let mail = localStorage.getItem("hardikSubmissionEmail").replace(/"/g, "")
+    let pass = localStorage.getItem("SubmissionPassword").replace(/"/g, "")
+    let mail = localStorage.getItem("SubmissionEmail").replace(/"/g, "")
     // .replace(/"/g,"") is used to remove the double quotes for the string
 
     if (!emaillog || !passwordlog) {
@@ -37,8 +35,10 @@ export function Login() {
     <div>
       {home ? (
         <LoginContainer onSubmit={handleLogin}>
-          <h3>LogIn</h3>
+          <h3>Login</h3>
           <TextField
+            required
+            autoComplete="email"
             label="Email"
             type="email"
             onChange={(event) => setEmaillog(event.target.value)}
@@ -47,6 +47,8 @@ export function Login() {
           </TextField>
 
           <TextField
+            required
+            autoComplete="current-password"
             label="Password"
             type="password"
             onChange={(event) => setPasswordlog(event.target.value)}
@@ -58,7 +60,7 @@ export function Login() {
             Login
           </Button>
 
-          <Link to={ROUTER_PATHS.LOGIN}>Register Here</Link>
+          <Link to={ROUTER_PATHS.SIGNUP}>Register Here</Link>
         </LoginContainer>
       ) : (
         <Main />
