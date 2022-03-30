@@ -2,6 +2,7 @@ import { Switch } from "@material-ui/core"
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import { ROUTER_PATHS } from "../../routerPaths"
+import { Connect } from "../connect"
 import { NavContainer } from "./index.styles"
 
 export const Nav = () => {
@@ -18,7 +19,7 @@ export const Nav = () => {
       setRoute(<Link to={ROUTER_PATHS.LOGIN}>Login</Link>)
     } else {
       setLabel("Web3")
-      setRoute(<Link to={ROUTER_PATHS.CONNECT}>Connect</Link>)
+      setRoute(<Connect />)
     }
   }
 

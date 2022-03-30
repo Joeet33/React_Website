@@ -26,12 +26,5 @@ export const Connect = () => {
       alert("Meta Mask not detected")
     }
   }
-  return (
-    <div className="App">
-      <header className="App-header">
-        <button onClick={requestAccount}>Request Account</button>
-        <h3>Wallet Address: {walletAddress}</h3>
-      </header>
-    </div>
-  )
+  return <button onClick={requestAccount}>Connect</button>
 }
