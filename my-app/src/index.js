@@ -1,12 +1,16 @@
 import React from "react"
 import ReactDOM from "react-dom"
 import App from "./App"
+import { TransactionsProvider } from "./context/TransactionContext"
 import { GlobalStyle } from "./globalStyles"
 
 ReactDOM.render(
-  <React.StrictMode>
-    <GlobalStyle />
-    <App />
-  </React.StrictMode>,
+  <TransactionsProvider>
+    <React.StrictMode>
+      <GlobalStyle />
+      <App />
+    </React.StrictMode>
+    ,
+  </TransactionsProvider>,
   document.getElementById("root")
 )

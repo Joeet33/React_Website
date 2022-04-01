@@ -17,7 +17,6 @@ function App() {
         <Nav />
         <Routes>
           <Route path={ROUTER_PATHS.HOME} element={<Main />} />
-          <Route path={ROUTER_PATHS.CONNECT} element={<Connect />} />
           <Route
             path={ROUTER_PATHS.LOGIN}
             element={
