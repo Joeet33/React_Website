@@ -2,9 +2,9 @@ import { useContext } from "react"
 
 import { TransactionContext } from "../../context/TransactionContext"
 
-export const Main = () => {
+export const Main = ({ checked }) => {
   const { currentAccount } = useContext(TransactionContext)
   console.log(currentAccount)
 
-  return <h3>Wallet Address: {currentAccount} </h3>
+  return checked ? <h3>Wallet Address: {currentAccount} </h3> : null
 }

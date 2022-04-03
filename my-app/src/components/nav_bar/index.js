@@ -1,28 +1,10 @@
 import { Switch } from "@material-ui/core"
-import { useState } from "react"
 import { Link } from "react-router-dom"
 import { ROUTER_PATHS } from "../../routerPaths"
 import { Connect } from "../connect"
 import { NavContainer } from "./index.styles"
 
-export const Nav = () => {
-  const [checked, setChecked] = useState(false)
-  const [label, setLabel] = useState("Web2")
-  const [reroute, setRoute] = useState(
-    <Link to={ROUTER_PATHS.LOGIN}>Login</Link>
-  )
-
-  const handleChange = (event) => {
-    setChecked(event.target.checked)
-    if (checked) {
-      setLabel("Web2")
-      setRoute(<Link to={ROUTER_PATHS.LOGIN}>Login</Link>)
-    } else {
-      setLabel("Web3")
-      setRoute(<Connect />)
-    }
-  }
-
+export const Nav = ({ checked, setChecked }) => {
   return (
     <NavContainer>
       <h1>
@@ -33,16 +15,18 @@ export const Nav = () => {
           <li>
             <Switch
               checked={checked}
-              onChange={handleChange}
+              onChange={(e) => setChecked(e)}
               inputProps={{ "aria-label": "controlled" }}
             />
-            {label}
+            {checked ? "Web3" : "Web2"}
           </li>
           <li>
-            <a href="#">Shop</a>
+            <Link to={ROUTER_PATHS.SHOP}>Shop</Link>
           </li>
 
-          <li>{reroute}</li>
+          <li>
+            {checked ? <Connect /> : <Link to={ROUTER_PATHS.LOGIN}>Login</Link>}
+          </li>
         </ul>
       </nav>
     </NavContainer>
