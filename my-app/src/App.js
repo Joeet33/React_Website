@@ -7,9 +7,10 @@ import { Layout } from "./components/layout"
 import { Login } from "./components/login"
 import { Signup } from "./components/sign_up"
 import { Shop } from "./components/shop"
+import { StripeContainer } from "./components/stripe_container"
 
 export const App = () => {
-  const [isLoggedin, setIsLoggedIn] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [isWeb2, setIsWeb2] = useState(false)
 
   const handleChange = (event) => {
@@ -25,23 +26,31 @@ export const App = () => {
   return (
     <BrowserRouter>
       <Layout>
-        <Nav checked={isWeb2} setChecked={(e) => handleChange(e)} />
+        <Nav
+          checked={isWeb2}
+          setChecked={(e) => !handleChange(e)}
+          isLoggedIn={isLoggedIn}
+        />
         <Routes>
           <Route path={ROUTER_PATHS.HOME} element={<Main checked={isWeb2} />} />
-          <Route path={ROUTER_PATHS.SHOP} element={<Shop />}></Route>
+          <Route path={ROUTER_PATHS.PAYMENT} element={<StripeContainer />} />
+          <Route
+            path={ROUTER_PATHS.SHOP}
+            element={<Shop checked={isWeb2} isLoggedIn={isLoggedIn} />}
+          ></Route>
           <Route
             path={ROUTER_PATHS.LOGIN}
             element={
-              !isLoggedin ? (
+              !isLoggedIn ? (
                 <Login loginState={(value) => setIsLoggedIn(value)} />
               ) : (
-                <Navigate to="/" />
+                <Navigate to={ROUTER_PATHS.HOME} />
               )
             }
           />
           <Route
             path={ROUTER_PATHS.SIGNUP}
-            element={!isLoggedin ? <Signup /> : <Navigate to="/" />}
+            element={!isLoggedIn ? <Signup /> : <Navigate to="/" />}
           />
         </Routes>
       </Layout>

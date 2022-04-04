@@ -4,7 +4,7 @@ import { ROUTER_PATHS } from "../../routerPaths"
 import { Connect } from "../connect"
 import { NavContainer } from "./index.styles"
 
-export const Nav = ({ checked, setChecked }) => {
+export const Nav = ({ checked, setChecked, isLoggedIn }) => {
   return (
     <NavContainer>
       <h1>
@@ -25,7 +25,11 @@ export const Nav = ({ checked, setChecked }) => {
           </li>
 
           <li>
-            {checked ? <Connect /> : <Link to={ROUTER_PATHS.LOGIN}>Login</Link>}
+            {checked ? (
+              <Connect />
+            ) : (
+              !isLoggedIn && <Link to={ROUTER_PATHS.LOGIN}>Login</Link>
+            )}
           </li>
         </ul>
       </nav>
