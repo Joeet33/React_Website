@@ -3,8 +3,13 @@ import { Link } from "react-router-dom"
 import { ROUTER_PATHS } from "../../routerPaths"
 import { Connect } from "../connect"
 import { NavContainer } from "./index.styles"
+import { useContext } from "react"
+import { TransactionContext } from "../../context/TransactionContext"
 
 export const Nav = ({ checked, setChecked, isLoggedIn }) => {
+
+  const { currentAccount } = useContext(TransactionContext)
+
   return (
     <NavContainer>
       <h1>
@@ -26,7 +31,7 @@ export const Nav = ({ checked, setChecked, isLoggedIn }) => {
 
           <li>
             {checked ? (
-              <Connect />
+             !currentAccount && <Connect />
             ) : (
               !isLoggedIn && <Link to={ROUTER_PATHS.LOGIN}>Login</Link>
             )}
