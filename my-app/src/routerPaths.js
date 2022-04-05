@@ -4,4 +4,5 @@ export const ROUTER_PATHS = {
   SIGNUP: "/signup",
   SHOP: "/shop",
   PAYMENT: "/payment",
+  TRANSACTIONS: "/transactions"
 }

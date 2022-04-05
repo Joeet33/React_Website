@@ -8,6 +8,7 @@ import { Login } from "./components/login"
 import { Signup } from "./components/sign_up"
 import { Shop } from "./components/shop"
 import { StripeContainer } from "./components/stripe_container"
+import { Transactions } from "./components/trial/transaction"
 
 export const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -34,6 +35,7 @@ export const App = () => {
         <Routes>
           <Route path={ROUTER_PATHS.HOME} element={<Main checked={isWeb2} />} />
           <Route path={ROUTER_PATHS.PAYMENT} element={<StripeContainer />} />
+          <Route path={ROUTER_PATHS.TRANSACTIONS} element={<Transactions />} />
           <Route
             path={ROUTER_PATHS.SHOP}
             element={<Shop checked={isWeb2} isLoggedIn={isLoggedIn} />}
