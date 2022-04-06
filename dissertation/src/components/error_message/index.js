@@ -1,4 +1,4 @@
-export default function ErrorMessage({ message }) {
+export const ErrorMessage = ({ message }) => {
     if (!message) return null;
   
     return (

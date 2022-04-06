@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { ethers } from "ethers";
-import ErrorMessage from "./ErrorMessage";
-import TxList from "./TxList";
+import {ErrorMessage} from "../error_message";
+import { TxList } from "../tx_list"
 
-const startPayment = async ({ setError, setTxs, ether, addr }) => {
+const startPayment = async ({ setError, setTxs }) => {
   try {
     if (!window.ethereum)
       throw new Error("No crypto wallet found. Please install it.");
@@ -11,10 +11,11 @@ const startPayment = async ({ setError, setTxs, ether, addr }) => {
     await window.ethereum.send("eth_requestAccounts");
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
-    ethers.utils.getAddress(addr);
+    const addr = ethers.utils.getAddress("0xD2B3E92060e0dF0e4f300ae8f9Cc5Ea367e91F5D");
+    const ether = ethers.utils.parseEther("0.00015")
     const tx = await signer.sendTransaction({
       to: addr,
-      value: ethers.utils.parseEther(ether)
+      value: ether
     });
     console.log({ ether, addr });
     console.log("tx", tx);
@@ -30,13 +31,11 @@ export const Transactions = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = new FormData(e.target);
     setError();
     await startPayment({
       setError,
       setTxs,
-      ether: data.get("ether"),
-      addr: data.get("addr")
+     
     });
   };
 
@@ -48,22 +47,6 @@ export const Transactions = () => {
             Send ETH payment
           </h1>
           <div className="">
-            <div className="my-3">
-              <input
-                type="text"
-                name="addr"
-                className="input input-bordered block w-full focus:ring focus:outline-none"
-                placeholder="Recipient Address"
-              />
-            </div>
-            <div className="my-3">
-              <input
-                name="ether"
-                type="text"
-                className="input input-bordered block w-full focus:ring focus:outline-none"
-                placeholder="Amount in ETH"
-              />
-            </div>
           </div>
         </main>
         <footer className="p-4">

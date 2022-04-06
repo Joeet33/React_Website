@@ -1,4 +1,4 @@
-export default function TxList({ txs }) {
+export const TxList = ({ txs }) => {
     if (txs.length === 0) return null;
   
     return (
