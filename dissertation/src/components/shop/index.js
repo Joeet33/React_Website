@@ -14,7 +14,7 @@ export const Shop = ({ checked, isLoggedIn }) => {
     </>
   ) : (
     <div>
-      You are not connected in please click <Connect /> to add you're account
+      You are not connected in please click <Connect /> to you're MetaMask
     </div>
   )
   const isWeb2LoggedIn = isLoggedIn ? (

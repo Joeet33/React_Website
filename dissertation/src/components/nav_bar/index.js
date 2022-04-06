@@ -2,7 +2,7 @@ import { Switch } from "@material-ui/core"
 import { Link } from "react-router-dom"
 import { ROUTER_PATHS } from "../../routerPaths"
 import { Connect } from "../connect"
-import { NavContainer } from "./index.styles"
+import { NavContainer, StyledLogin, StyledLink, StyledCursor } from "./index.styles"
 import { useContext } from "react"
 import { TransactionContext } from "../../context/TransactionContext"
 
@@ -12,30 +12,30 @@ export const Nav = ({ checked, setChecked, isLoggedIn }) => {
 
   return (
     <NavContainer>
-      <h1>
-        <Link to={ROUTER_PATHS.HOME}>home</Link>
-      </h1>
+ 
+        <StyledLink to={ROUTER_PATHS.HOME}>Home</StyledLink>
+    
       <nav>
         <ul className="nav__links">
-          <li>
+          <StyledCursor>
             <Switch
               checked={checked}
               onChange={(e) => setChecked(e)}
               inputProps={{ "aria-label": "controlled" }}
             />
             {checked ? "Web3" : "Web2"}
-          </li>
+          </StyledCursor>
           <li>
             <Link to={ROUTER_PATHS.SHOP}>Shop</Link>
           </li>
 
-          <li>
+          
             {checked ? (
              !currentAccount && <Connect />
             ) : (
-              !isLoggedIn && <Link to={ROUTER_PATHS.LOGIN}>Login</Link>
+              !isLoggedIn && <Link to={ROUTER_PATHS.LOGIN}><StyledLogin> Login </StyledLogin></Link>
             )}
-          </li>
+          
         </ul>
       </nav>
     </NavContainer>

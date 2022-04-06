@@ -1,6 +1,5 @@
 import React, { useState } from "react"
-import { SignupContainer } from "../sign_up/index.styles"
-import Button from "@material-ui/core/Button"
+import { SignupContainer, StyledRegisterButton } from "../sign_up/index.styles"
 import { TextField } from "@material-ui/core"
 import { ROUTER_PATHS } from "../../routerPaths"
 import { Link, useNavigate } from "react-router-dom"
@@ -28,6 +27,7 @@ export const Signup = () => {
         <h3>Register</h3>
 
         <TextField
+          className="formControl"
           required
           autoComplete="email"
           label="Email"
@@ -36,6 +36,7 @@ export const Signup = () => {
         ></TextField>
 
         <TextField
+          className="formControl"
           required
           autoComplete="new-password"
           label="Password"
@@ -43,12 +44,12 @@ export const Signup = () => {
           onChange={(event) => setPassword(event.target.value)}
         ></TextField>
 
-        <Button variant="contained" color="primary" type="submit">
+        <StyledRegisterButton>
           Sign Up
-        </Button>
+        </StyledRegisterButton>
 
-        <div>
-          Already registered <Link to={ROUTER_PATHS.LOGIN}>login?</Link>
+        <div className="styledDiv">
+          Already registered <Link className="styledLink" to={ROUTER_PATHS.LOGIN}>Login?</Link>
         </div>
       </SignupContainer>
     </>

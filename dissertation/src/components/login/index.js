@@ -1,9 +1,9 @@
 import React, { useState } from "react"
 import { LoginContainer } from "./index.styles"
-import Button from "@material-ui/core/Button"
 import { TextField } from "@material-ui/core"
-import { Link } from "react-router-dom"
 import { ROUTER_PATHS } from "../../routerPaths"
+import { Link } from "react-router-dom"
+import {StyledSubmitButton} from "./index.styles"
 
 export const Login = ({ loginState }) => {
   const [emaillog, setEmaillog] = useState(" ")
@@ -30,6 +30,7 @@ export const Login = ({ loginState }) => {
       <LoginContainer onSubmit={handleLogin}>
         <h3>Login</h3>
         <TextField
+          className="formControl"
           required
           autoComplete="email"
           label="Email"
@@ -40,6 +41,7 @@ export const Login = ({ loginState }) => {
         </TextField>
 
         <TextField
+          className="formControl"
           required
           autoComplete="current-password"
           label="Password"
@@ -49,11 +51,13 @@ export const Login = ({ loginState }) => {
           <label>Password</label>
         </TextField>
 
-        <Button variant="contained" color="primary" type="submit">
-          Login
-        </Button>
+        <StyledSubmitButton>
+          Submit
+        </StyledSubmitButton>
+        <div className="styledDiv">
+        <Link className="styledLink" to={ROUTER_PATHS.SIGNUP}>Register Here</Link>
 
-        <Link to={ROUTER_PATHS.SIGNUP}>Register Here</Link>
+        </div>
       </LoginContainer>
     </div>
   )
