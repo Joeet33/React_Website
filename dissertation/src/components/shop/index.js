@@ -4,12 +4,13 @@ import { Link } from "react-router-dom"
 import { TransactionContext } from "../../context/TransactionContext"
 import { ROUTER_PATHS } from "../../routerPaths"
 import { Connect } from "../connect"
+import { Transactions } from "../web3Transactions"
 
 export const Shop = ({ checked, isLoggedIn }) => {
   const { currentAccount } = useContext(TransactionContext)
   const isWeb3Connect = currentAccount ? (
     <>
-      <div>Web3-Loggedin Add Payment button</div>
+      <Transactions />
     </>
   ) : (
     <div>
@@ -20,7 +21,7 @@ export const Shop = ({ checked, isLoggedIn }) => {
     <Link to={ROUTER_PATHS.PAYMENT}> Payment </Link>
   ) : (
     <div>
-      You are not logged in please click the link <a href="">here</a>
+      You are not logged in, please <a href="">Login</a>
     </div>
   )
 
