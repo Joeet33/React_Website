@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-
+import { ethers } from "ethers";
 
 
 export const TransactionContext = React.createContext()
@@ -39,11 +39,34 @@ export const TransactionsProvider = ({ children }) => {
     checkIfWalletIsConnect()
   }, [])
 
+  const startPayment = async ({ setError, setTxs }) => {
+    try {
+      if (!window.ethereum)
+        throw new Error("No crypto wallet found. Please install it.");
+  
+      await window.ethereum.send("eth_requestAccounts");
+      const provider = new ethers.providers.Web3Provider(window.ethereum);
+      const signer = provider.getSigner();
+      const addr = ethers.utils.getAddress("0xD2B3E92060e0dF0e4f300ae8f9Cc5Ea367e91F5D");
+      const ether = ethers.utils.parseEther("0.00015")
+      const tx = await signer.sendTransaction({
+        to: addr,
+        value: ether
+      });
+      console.log({ ether, addr });
+      console.log("tx", tx);
+      setTxs([tx]);
+    } catch (err) {
+      setError(err.message);
+    }
+  };
+
   return (
     <TransactionContext.Provider
       value={{
         connectWallet,
         currentAccount,
+        startPayment,
       }}
     >
       {children}
