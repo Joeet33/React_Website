@@ -8,6 +8,7 @@ import { Login } from "./components/login"
 import { Signup } from "./components/sign_up"
 import { Shop } from "./components/shop"
 import { StripeContainer } from "./components/stripe_container"
+import { PaymentSuccess } from "./components/paymentSuccess"
 
 
 export const App = () => {
@@ -34,11 +35,10 @@ export const App = () => {
         />
         <Routes>
           <Route path={ROUTER_PATHS.HOME} element={<Main checked={isWeb2} />} />
-          <Route path={ROUTER_PATHS.PAYMENT} element={<StripeContainer />} />
           <Route
             path={ROUTER_PATHS.SHOP}
             element={<Shop checked={isWeb2} isLoggedIn={isLoggedIn} />}
-          ></Route>
+           />
           <Route
             path={ROUTER_PATHS.LOGIN}
             element={
@@ -50,9 +50,20 @@ export const App = () => {
             }
           />
           <Route
+            path={ROUTER_PATHS.PAYMENT}
+            element={
+              !isLoggedIn ? (
+                <Login loginState={(value) => setIsLoggedIn(value)} />
+              ) : (
+                <StripeContainer to={ROUTER_PATHS.PAYMENT} />
+              )
+            }
+          />
+          <Route
             path={ROUTER_PATHS.SIGNUP}
             element={!isLoggedIn ? <Signup /> : <Navigate to="/" />}
           />
+          <Route path={ROUTER_PATHS.PAYMENTSUCCESS} element={<PaymentSuccess />} />
         </Routes>
       </Layout>
     </BrowserRouter>

@@ -11,7 +11,7 @@ export const SignupContainer = styled.form`
   border-radius: 20px;
   color: white;
 
-  h3 {
+  h1 {
     cursor: default;
   }
 
@@ -24,6 +24,7 @@ export const SignupContainer = styled.form`
     padding-top: 2vh;
     padding-bottom: 7vh;
     font-weight: bold;
+    font-size: large;
   }
 
   .styledLink {

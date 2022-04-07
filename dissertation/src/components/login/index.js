@@ -28,7 +28,7 @@ export const Login = ({ loginState }) => {
   return (
     <div>
       <LoginContainer onSubmit={handleLogin}>
-        <h3>Login</h3>
+        <h1>Login</h1>
         <TextField
           className="formControl"
           required

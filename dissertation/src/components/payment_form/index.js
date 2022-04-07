@@ -1,6 +1,8 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js"
 import axios from "axios"
 import React, { useState } from "react"
+import { Navigate } from "react-router"
+import { ROUTER_PATHS } from "../../routerPaths"
 import { StyledFormContainer } from "./index.styles"
 
 const CARD_OPTIONS = {
@@ -67,9 +69,7 @@ export const PaymentForm = () => {
           <button>Pay</button>
         </StyledFormContainer>
       ) : (
-        <div>
-          <h2>Congratulations You've just bought a new car!</h2>
-        </div>
+        <Navigate to={ROUTER_PATHS.PAYMENTSUCCESS} />
       )}
     </>
   )

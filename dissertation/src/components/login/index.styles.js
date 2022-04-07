@@ -11,7 +11,7 @@ export const LoginContainer = styled.form`
   border-radius: 20px;
   color: white;
 
-  h3 {
+  h1 {
     cursor: default;
   }
 
@@ -29,6 +29,8 @@ export const LoginContainer = styled.form`
   .styledLink {
     color: white;
     text-decoration: none;
+    font-size: large;
+    font-weight: bold;
 
     &:Hover {
       text-decoration: underline;

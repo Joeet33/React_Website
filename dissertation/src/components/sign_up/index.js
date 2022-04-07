@@ -24,7 +24,7 @@ export const Signup = () => {
   return (
     <>
       <SignupContainer onSubmit={handleFormSubmit}>
-        <h3>Register</h3>
+        <h1>Register</h1>
 
         <TextField
           className="formControl"

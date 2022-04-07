@@ -1,33 +1,28 @@
 import { useContext } from "react"
-import { Link } from "react-router-dom"
-
 import { TransactionContext } from "../../context/TransactionContext"
-import { ROUTER_PATHS } from "../../routerPaths"
-import { Connect } from "../connect"
-import { Transactions } from "../web3Transactions"
+import { Web2LoggedIn } from "../web2LoggedIn"
+import { NotLoggenIn } from "../web2NotLoggedIn"
+import { Web3Connected } from "../web3Connected"
+import { NotConnected } from "../web3NotConnected"
 
 export const Shop = ({ checked, isLoggedIn }) => {
   const { currentAccount } = useContext(TransactionContext)
   const isWeb3Connect = currentAccount ? (
     <>
-      <Transactions />
+    <Web3Connected />
     </>
   ) : (
-    <div>
-      You are not connected in please click <Connect /> to you're MetaMask
-    </div>
+   <NotConnected />
   )
   const isWeb2LoggedIn = isLoggedIn ? (
-    <Link to={ROUTER_PATHS.PAYMENT}> Payment </Link>
+    <Web2LoggedIn />
   ) : (
-    <div>
-      You are not logged in, please <a href="">Login</a>
-    </div>
+    <NotLoggenIn />
   )
 
   return (
     <>
-      {checked ? isWeb3Connect : isWeb2LoggedIn} <div>test</div>
+      {checked ? isWeb3Connect : isWeb2LoggedIn}
     </>
   )
 }
