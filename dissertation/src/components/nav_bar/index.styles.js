@@ -8,7 +8,15 @@ export const NavContainer = styled.div`
   box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
   background-color: #00BFFF;
 
-  
+  div {
+    color: #f50057;
+      font-weight: bold;
+      font-size: xx-large;
+      text-decoration: none;
+      margin-right: auto;
+      justify-content: flex-end;
+      cursor: default;
+  }
 
   ul {
     list-style: none;
@@ -31,21 +39,22 @@ export const NavContainer = styled.div`
       &:hover {
         color: #f50057;
       }
-    }
-  
+    }  
   }
 `
 export const StyledLink = styled(Link)`
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-      font-size: xx-large;
       cursor: pointer;
     margin-right: auto;
     padding-left: 10px;
     transition: all 0.3s ease 0s;
-    &:hover {
-      color: #f50057;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      img {
+        width: 8vw;
+    }
     }`
 
   export const StyledCursor = styled.li`

@@ -9,7 +9,7 @@ export const Web3Connected = () => {
 
 <img src={require("../../assets/tesla.png")} alt="Car"/>
 
-<div className="Price">Price: £30,000</div>
+<div className="Price">Price: 0.00015 Eth</div>
 
     <Transactions />
     </LoggedInContainer>

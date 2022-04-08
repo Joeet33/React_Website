@@ -13,7 +13,9 @@ export const Nav = ({ checked, setChecked, isLoggedIn }) => {
   return (
     <NavContainer>
  
-        <StyledLink to={ROUTER_PATHS.HOME}>Home</StyledLink>
+        <StyledLink to={ROUTER_PATHS.HOME}><img src={require("../../assets/bmw.png")}/></StyledLink>
+
+        <div>Car Dealership</div>
     
       <nav>
         <ul className="nav__links">
