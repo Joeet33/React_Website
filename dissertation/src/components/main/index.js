@@ -20,8 +20,6 @@ export const Main = ({ checked }) => {
         <div>Head over to Shop to Purchase your car!</div>
 
         <img src={require("../../assets/tesla.png")} alt="Car" />
-
-        <div className="Price">Accepts: GBP & Eth</div>
       </LoggedInContainer>
     </>
   )

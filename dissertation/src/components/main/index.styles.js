@@ -10,8 +10,17 @@ export const LoggedInContainer = styled.div`
   background-color: #00bfff;
   border-radius: 20px;
   color: white;
-  padding: 2vw;
+  padding: 1vw;
   padding-bottom: 1vh;
+
+  @media (max-width: 375px) {
+    margin-top: 3vh;
+  }
+
+  @media (min-width: 1440px) {
+    margin-top: 2vh;
+    padding: 0;
+  }
 
   h3 {
     position: relative;
@@ -35,6 +44,10 @@ export const LoggedInContainer = styled.div`
     padding-top: 5vh;
     width: 30vw;
     border-radius: 60px;
+
+    @media (max-width: 375px) {
+      width: 50vw;
+    }
   }
 
   .Price {
@@ -50,5 +63,10 @@ export const LoggedInContainer = styled.div`
   div {
     font-weight: bold;
     font-size: x-large;
+    text-align: center;
+
+    @media (max-width: 375px) {
+      font-size: large;
+    }
   }
 `
