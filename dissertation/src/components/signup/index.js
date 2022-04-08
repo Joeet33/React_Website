@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { SignupContainer, StyledRegisterButton } from "../sign_up/index.styles"
+import { SignupContainer, StyledRegisterButton } from "./index.styles"
 import { TextField } from "@material-ui/core"
 import { ROUTER_PATHS } from "../../routerPaths"
 import { Link, useNavigate } from "react-router-dom"

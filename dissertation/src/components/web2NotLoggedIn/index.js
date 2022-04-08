@@ -1,6 +1,6 @@
 import { StyleContainer } from "./index.styles"
 import { Link } from "react-router-dom"
-import { StyledLogin } from "../nav_bar/index.styles"
+import { StyledLogin } from "../navBar/index.styles"
 import { ROUTER_PATHS } from "../../routerPaths"
 
 export const NotLoggenIn = () => {

@@ -1,7 +1,7 @@
 import { Switch } from "@material-ui/core"
 import { Link } from "react-router-dom"
 import { ROUTER_PATHS } from "../../routerPaths"
-import { Connect } from "../connect"
+import { Connect } from "../MetaMaskConnect"
 import {
   NavContainer,
   StyledLogin,

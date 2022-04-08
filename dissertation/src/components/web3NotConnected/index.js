@@ -1,5 +1,5 @@
 import { StyleContainer } from "./index.styles"
-import { Connect } from "../connect"
+import { Connect } from "../MetaMaskConnect"
 
 export const NotConnected = () => {
   return (

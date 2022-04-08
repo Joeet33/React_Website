@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react"
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
 import { ROUTER_PATHS } from "./routerPaths"
-import { Nav } from "./components/nav_bar/"
+import { Nav } from "./components/navBar"
 import { Main } from "./components/main/"
 import { Layout } from "./components/layout"
-import { Login } from "./components/login"
-import { Signup } from "./components/sign_up"
+import { Login } from "./components/loginForm"
 import { Shop } from "./components/shop"
 import { StripeContainer } from "./components/stripe_container"
 import { PaymentSuccess } from "./components/paymentSuccess"
+import { Signup } from "./components/signup"
 
 export const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false)

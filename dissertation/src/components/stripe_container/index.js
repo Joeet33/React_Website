@@ -1,7 +1,7 @@
 import { Elements } from "@stripe/react-stripe-js"
 import { loadStripe } from "@stripe/stripe-js"
 import React from "react"
-import { PaymentForm } from "../payment_form"
+import { PaymentForm } from "../paymentForm"
 import { PaymentContainer } from "./index.styles"
 
 const PUBLIC_KEY =
