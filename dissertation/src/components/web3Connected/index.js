@@ -1,8 +1,6 @@
 import React from "react"
 import { LoggedInContainer } from "./index.styles"
 import { useState } from "react"
-import { ErrorMessage } from "../error_message"
-import { TxList } from "../tx_list"
 import { useContext } from "react"
 import { TransactionContext } from "../../context/TransactionContext"
 import { TransactionsForm } from "./index.styles"
@@ -20,6 +18,32 @@ export const Web3Connected = () => {
       setError,
       setTxs,
     })
+  }
+
+  const ErrorMessage = ({ message }) => {
+    if (!message) return null
+
+    return (
+      <div>
+        <label>{message}</label>
+      </div>
+    )
+  }
+
+  const TxList = ({ txs }) => {
+    if (txs.length === 0) return null
+
+    return (
+      <>
+        {txs.map((item) => (
+          <div key={item} className="alert alert-info mt-5">
+            <div className="flex-1">
+              <label>{item.hash}</label>
+            </div>
+          </div>
+        ))}
+      </>
+    )
   }
 
   return (
