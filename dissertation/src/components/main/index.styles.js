@@ -42,7 +42,7 @@ export const LoggedInContainer = styled.div`
   img {
     position: relative;
     padding-top: 5vh;
-    width: 30vw;
+    width: 42vw;
     border-radius: 60px;
 
     @media (max-width: 375px) {

@@ -25,12 +25,16 @@ export const LoggedInContainer = styled.div`
     padding-top: 5vh;
     width: 30vw;
     border-radius: 60px;
+    @media (max-width: 425px) {
+      width: 54vw;
+    }
   }
 
   .Price {
     font-size: x-large;
     font-weight: bold;
     padding-top: 2vh;
+    text-align: center;
   }
 
   button {
