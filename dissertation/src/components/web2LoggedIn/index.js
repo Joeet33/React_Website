@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import { LoggedInContainer } from "./index.styles"
+import { LoggedInContainer, StyledLink } from "./index.styles"
 import { ROUTER_PATHS } from "../../routerPaths"
 
 export const Web2LoggedIn = () => {
@@ -12,7 +12,7 @@ export const Web2LoggedIn = () => {
 
 <div className="Price">Price: £30,000</div>
 
-    <Link to={ROUTER_PATHS.PAYMENT}>Pay</Link>
+    <StyledLink to={ROUTER_PATHS.PAYMENT}>Pay Now</StyledLink>
     </LoggedInContainer>
   )
 }

@@ -10,7 +10,6 @@ import { ROUTER_PATHS } from "../../routerPaths";
 export const Transactions = () => {
   const { startPayment } = useContext(TransactionContext)
 
-  const [success, setSuccess] = useState(false)
   const [error, setError] = useState();
   const [txs, setTxs] = useState([]);
 
@@ -19,25 +18,20 @@ export const Transactions = () => {
     setError();
     await startPayment({
       setError,
-      setTxs,
-      setSuccess,     
+      setTxs,    
     });
   };
 
   return (
     <>
-    {!success ? ( <TransactionsForm onSubmit={handleSubmit}>
+    <TransactionsForm onClick={handleSubmit}>
      
-          <button>
-            Pay now
-          </button>
-          <ErrorMessage message={error} />
+            Pay Now
+          
           <TxList txs={txs} />
       
-    </TransactionsForm> ) : (
-      <Navigate to={ROUTER_PATHS.PAYMENTSUCCESS} />
-    )}
-
+    </TransactionsForm> 
+<ErrorMessage message={error} />
     </>
   );
 }

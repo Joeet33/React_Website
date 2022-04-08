@@ -1,8 +1,7 @@
 import styled from "styled-components"
 
-export const TransactionsForm = styled.form`
+export const TransactionsForm = styled.button`
 
-button {
     display: block;
     font-size: 16px;
     width: calc(100% - 30px);
@@ -18,5 +17,5 @@ button {
     transition: all 100ms ease-in-out;
     will-change: transform, background-color, box-shadow;
     border: none;
-  }
+  
 `
