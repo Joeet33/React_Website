@@ -11,6 +11,12 @@ export const LoginContainer = styled.form`
   border-radius: 20px;
   color: white;
 
+  @media (max-width: 650px) {
+    margin-top: 12vh;
+    width: 75vw;
+    margin-left: 13vw;
+  }
+
   h1 {
     cursor: default;
   }

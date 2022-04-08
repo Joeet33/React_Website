@@ -18,6 +18,10 @@ export const FooterContainer = styled.div`
 
     div {
       padding-bottom: 1vh;
+      @media (max-width: 450px) {
+        padding-bottom: 2vh;
+        font-size: x-small;
+      }
     }
   }
 
@@ -29,10 +33,16 @@ export const FooterContainer = styled.div`
     li {
       padding-right: 3vw;
       list-style: none;
+      @media (max-width: 450px) {
+        padding-right: 2vw;
+      }
     }
 
     img {
       width: 4vw;
+      @media (max-width: 500px) {
+        width: 9vw;
+      }
     }
   }
 `
