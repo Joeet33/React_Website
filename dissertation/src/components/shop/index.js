@@ -9,20 +9,12 @@ export const Shop = ({ checked, isLoggedIn }) => {
   const { currentAccount } = useContext(TransactionContext)
   const isWeb3Connect = currentAccount ? (
     <>
-    <Web3Connected />
+      <Web3Connected />
     </>
   ) : (
-   <NotConnected />
+    <NotConnected />
   )
-  const isWeb2LoggedIn = isLoggedIn ? (
-    <Web2LoggedIn />
-  ) : (
-    <NotLoggenIn />
-  )
+  const isWeb2LoggedIn = isLoggedIn ? <Web2LoggedIn /> : <NotLoggenIn />
 
-  return (
-    <>
-      {checked ? isWeb3Connect : isWeb2LoggedIn}
-    </>
-  )
+  return <>{checked ? isWeb3Connect : isWeb2LoggedIn}</>
 }

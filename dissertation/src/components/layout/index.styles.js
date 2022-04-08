@@ -4,7 +4,7 @@ export const LayoutContainer = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #FAF9F6;;
+  background-color: #faf9f6; ;
 `
 
 export const LayoutWrap = styled.div`

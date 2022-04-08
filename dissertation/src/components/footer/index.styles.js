@@ -5,23 +5,23 @@ export const FooterContainer = styled.div`
   position: relative;
   bottom: 0;
   width: 100%;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
-background-color: #00BFFF;
-display: flex;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+  background-color: #00bfff;
+  display: flex;
   justify-content: flex-end;
 
-  .footerContainer{
+  .footerContainer {
     margin-right: auto;
     padding-left: 2vw;
     color: white;
     font-weight: bold;
 
-  div{
-    padding-bottom: 1vh;
-  }
+    div {
+      padding-bottom: 1vh;
+    }
   }
 
-  ul{
+  ul {
     flex-direction: row;
     display: flex;
     justify-content: flex-end;
@@ -29,12 +29,10 @@ display: flex;
     li {
       padding-right: 3vw;
       list-style: none;
-  }
+    }
 
-  img {
-    width: 4vw;
-}
+    img {
+      width: 4vw;
+    }
   }
 `
-
-

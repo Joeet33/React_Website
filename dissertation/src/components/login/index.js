@@ -3,7 +3,7 @@ import { LoginContainer } from "./index.styles"
 import { TextField } from "@material-ui/core"
 import { ROUTER_PATHS } from "../../routerPaths"
 import { Link } from "react-router-dom"
-import {StyledSubmitButton} from "./index.styles"
+import { StyledSubmitButton } from "./index.styles"
 
 export const Login = ({ loginState }) => {
   const [emaillog, setEmaillog] = useState(" ")
@@ -51,12 +51,11 @@ export const Login = ({ loginState }) => {
           <label>Password</label>
         </TextField>
 
-        <StyledSubmitButton>
-          Submit
-        </StyledSubmitButton>
+        <StyledSubmitButton>Submit</StyledSubmitButton>
         <div className="styledDiv">
-        <Link className="styledLink" to={ROUTER_PATHS.SIGNUP}>Register Here</Link>
-
+          <Link className="styledLink" to={ROUTER_PATHS.SIGNUP}>
+            Register Here
+          </Link>
         </div>
       </LoginContainer>
     </div>

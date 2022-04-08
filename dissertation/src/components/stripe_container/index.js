@@ -14,9 +14,9 @@ export const StripeContainer = () => {
     <PaymentContainer>
       <div>Car: Tesla</div>
       <div>Cost: £30,000</div>
-    <Elements stripe={stripeTestPromise}>
-      <PaymentForm />
-    </Elements>
+      <Elements stripe={stripeTestPromise}>
+        <PaymentForm />
+      </Elements>
     </PaymentContainer>
   )
 }

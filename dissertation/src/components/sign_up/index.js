@@ -44,12 +44,13 @@ export const Signup = () => {
           onChange={(event) => setPassword(event.target.value)}
         ></TextField>
 
-        <StyledRegisterButton>
-          Sign Up
-        </StyledRegisterButton>
+        <StyledRegisterButton>Sign Up</StyledRegisterButton>
 
         <div className="styledDiv">
-          Already registered <Link className="styledLink" to={ROUTER_PATHS.LOGIN}>Login?</Link>
+          Already registered{" "}
+          <Link className="styledLink" to={ROUTER_PATHS.LOGIN}>
+            Login?
+          </Link>
         </div>
       </SignupContainer>
     </>

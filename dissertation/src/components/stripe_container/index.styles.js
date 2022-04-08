@@ -5,15 +5,15 @@ export const PaymentContainer = styled.div`
   margin-top: 17vh;
   width: 75vw;
   margin-left: 12.5vw;
-  background-color: #00BFFF;
+  background-color: #00bfff;
   border-radius: 20px;
   color: white;
   padding: 3vw;
 
-div {
+  div {
     text-align: center;
     font-size: large;
     font-weight: bold;
     padding-bottom: 2vh;
-}
+  }
 `

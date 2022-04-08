@@ -7,7 +7,7 @@ export const SignupContainer = styled.form`
   margin-top: 15vh;
   width: 50vw;
   margin-left: 25vw;
-  background-color: #00BFFF;
+  background-color: #00bfff;
   border-radius: 20px;
   color: white;
 
@@ -31,35 +31,35 @@ export const SignupContainer = styled.form`
     color: white;
     text-decoration: none;
 
-    &:Hover {
+    &:hover {
       text-decoration: underline;
     }
   }
 `
 export const StyledRegisterButton = styled.button`
-    padding: 0.8em 1.5em;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 2.5px;
-    font-weight: 500;
-    color: #000;
-    background-color: #fff;
-    border: none;
-    border-radius: 7px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease 0s;
-    cursor: pointer;
-    outline: none;
-   
-   &:hover {
+  padding: 0.8em 1.5em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 7px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
     background-color: #f50057;
     box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
     color: #fff;
     font-weight: bold;
     transform: translateY(-2px);
-   }
-   
-   &:active {
+  }
+
+  &:active {
     transform: translateY(-1px);
-   }
+  }
 `

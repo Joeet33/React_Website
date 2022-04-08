@@ -10,7 +10,6 @@ import { Shop } from "./components/shop"
 import { StripeContainer } from "./components/stripe_container"
 import { PaymentSuccess } from "./components/paymentSuccess"
 
-
 export const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [isWeb2, setIsWeb2] = useState(false)
@@ -38,7 +37,7 @@ export const App = () => {
           <Route
             path={ROUTER_PATHS.SHOP}
             element={<Shop checked={isWeb2} isLoggedIn={isLoggedIn} />}
-           />
+          />
           <Route
             path={ROUTER_PATHS.LOGIN}
             element={
@@ -63,7 +62,10 @@ export const App = () => {
             path={ROUTER_PATHS.SIGNUP}
             element={!isLoggedIn ? <Signup /> : <Navigate to="/" />}
           />
-          <Route path={ROUTER_PATHS.PAYMENTSUCCESS} element={<PaymentSuccess />} />
+          <Route
+            path={ROUTER_PATHS.PAYMENTSUCCESS}
+            element={<PaymentSuccess />}
+          />
         </Routes>
       </Layout>
     </BrowserRouter>
