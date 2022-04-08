@@ -11,6 +11,16 @@ export const LoggedInContainer = styled.div`
   border-radius: 20px;
   color: white;
   padding: 2vw;
+  padding-bottom: 1vh;
+
+  h3 {
+    position: relative;
+
+    @media (max-width: 650px) {
+      position: relative;
+      font-size: xx-small;
+    }
+  }
 
   .Title {
     text-align: center;

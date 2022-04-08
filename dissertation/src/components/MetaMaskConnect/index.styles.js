@@ -29,4 +29,9 @@ export const StyledButton = styled.button`
   &:active {
     transform: translateY(-1px);
   }
+
+  @media (max-width: 650px) {
+    padding: 2vw;
+    font-size: 1.2vw;
+  }
 `

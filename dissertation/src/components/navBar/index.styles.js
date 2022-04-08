@@ -8,7 +8,7 @@ export const NavContainer = styled.div`
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
   background-color: #00bfff;
 
-  div {
+  .title {
     color: #f50057;
     font-weight: bold;
     font-size: xx-large;
@@ -16,19 +16,41 @@ export const NavContainer = styled.div`
     margin-right: auto;
     justify-content: flex-end;
     cursor: default;
+
+    @media (max-width: 800px) {
+      display: none;
+    }
   }
 
   ul {
     list-style: none;
   }
 
-  li {
+  .navItems {
     display: inline-block;
     padding: 0px 20px;
     color: white;
     font-weight: bold;
     text-decoration: none;
     font-size: x-large;
+
+    @media (max-width: 650px) {
+      display: inline-block;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: large;
+    }
+
+    @media (max-width: 375px) {
+      display: inline-block;
+      color: white;
+      font-weight: bold;
+      padding: 0vw;
+      -webkit-text-decoration: none;
+      text-decoration: none;
+      font-size: medium;
+    }
 
     a {
       color: white;
@@ -54,11 +76,29 @@ export const StyledLink = styled(Link)`
 
       img {
         width: 8vw;
-    }
+
+
+    
+        @media (max-width: 650px) {
+          width: 20vw;
+        padding: 2vw;
+        }
+      }
     }`
 
-export const StyledCursor = styled.li`
+export const StyledLi = styled.li`
   cursor: default;
+  margin-left: -2vw;
+  display: inline-block;
+  padding: 0px 20px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: x-large;
+
+  @media (max-width: 650px) {
+    display: none;
+  }
 `
 
 export const StyledLogin = styled.button`
@@ -90,5 +130,10 @@ export const StyledLogin = styled.button`
 
   &:active {
     transform: translateY(-1px);
+  }
+
+  @media (max-width: 650px) {
+    padding: 2vw;
+    font-size: 1.8vw;
   }
 `

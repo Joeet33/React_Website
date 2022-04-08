@@ -7,6 +7,7 @@ import {
   StyledLogin,
   StyledLink,
   StyledCursor,
+  StyledLi,
 } from "./index.styles"
 import { useContext } from "react"
 import { TransactionContext } from "../../context/TransactionContext"
@@ -20,19 +21,19 @@ export const Nav = ({ checked, setChecked, isLoggedIn }) => {
         <img src={require("../../assets/bmw.png")} />
       </StyledLink>
 
-      <div>Car Dealership</div>
+      <div className="title">Car Dealership</div>
 
       <nav>
         <ul className="nav__links">
-          <StyledCursor>
+          <li className="navItems">
             <Switch
               checked={checked}
               onChange={(e) => setChecked(e)}
               inputProps={{ "aria-label": "controlled" }}
             />
-            {checked ? "Web3" : "Web2"}
-          </StyledCursor>
-          <li>
+            <StyledLi>{checked ? "Web3" : "Web2"}</StyledLi>
+          </li>
+          <li className="navItems">
             <Link to={ROUTER_PATHS.SHOP}>Shop</Link>
           </li>
 
