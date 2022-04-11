@@ -17,7 +17,7 @@ export const Main = ({ checked }) => {
           ? currentAccount && <h3>Wallet Address: {currentAccount} </h3>
           : null}
 
-        <div>Head over to Shop to Purchase your car!</div>
+        <div>To purchase your car head over to Shop!</div>
 
         <img src={require("../../assets/tesla.png")} alt="Car" />
       </LoggedInContainer>

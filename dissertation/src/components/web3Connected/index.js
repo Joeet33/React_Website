@@ -4,6 +4,8 @@ import { useState } from "react"
 import { useContext } from "react"
 import { TransactionContext } from "../../context/TransactionContext"
 import { TransactionsForm } from "./index.styles"
+import { Navigate } from "react-router"
+import { ROUTER_PATHS } from "../../routerPaths"
 
 export const Web3Connected = () => {
   const { startPayment } = useContext(TransactionContext)
@@ -36,8 +38,8 @@ export const Web3Connected = () => {
     return (
       <>
         {txs.map((item) => (
-          <div key={item} className="alert alert-info mt-5">
-            <div className="flex-1">
+          <div key={item}>
+            <div>
               <label>{item.hash}</label>
             </div>
           </div>
@@ -47,20 +49,22 @@ export const Web3Connected = () => {
   }
 
   return (
-    <LoggedInContainer>
-      <div className="Title">Tesla for sale</div>
+    <>
+      <LoggedInContainer>
+        <div className="Title">Tesla for sale</div>
 
-      <img src={require("../../assets/tesla.png")} alt="Car" />
+        <img src={require("../../assets/tesla.png")} alt="Car" />
 
-      <div className="Price">Price: 0.00015 Eth</div>
+        <div className="Price">Price: 0.00015 Eth</div>
 
-      <>
-        <TransactionsForm onClick={handleSubmit}>
-          Pay Now
-          <TxList txs={txs} />
-        </TransactionsForm>
-        <ErrorMessage message={error} />
-      </>
-    </LoggedInContainer>
+        <>
+          <TransactionsForm onClick={handleSubmit}>
+            Pay Now
+            <TxList txs={txs} />
+          </TransactionsForm>
+          <ErrorMessage message={error} />
+        </>
+      </LoggedInContainer>
+    </>
   )
 }
