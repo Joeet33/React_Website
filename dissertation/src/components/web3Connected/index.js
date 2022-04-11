@@ -4,8 +4,6 @@ import { useState } from "react"
 import { useContext } from "react"
 import { TransactionContext } from "../../context/TransactionContext"
 import { TransactionsForm } from "./index.styles"
-import { Navigate } from "react-router"
-import { ROUTER_PATHS } from "../../routerPaths"
 
 export const Web3Connected = () => {
   const { startPayment } = useContext(TransactionContext)

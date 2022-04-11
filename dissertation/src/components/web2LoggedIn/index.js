@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "react-router-dom"
 import { LoggedInContainer, StyledLink } from "./index.styles"
 import { ROUTER_PATHS } from "../../routerPaths"
 

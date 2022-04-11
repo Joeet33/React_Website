@@ -2,13 +2,7 @@ import { Switch } from "@material-ui/core"
 import { Link } from "react-router-dom"
 import { ROUTER_PATHS } from "../../routerPaths"
 import { Connect } from "../MetaMaskConnect"
-import {
-  NavContainer,
-  StyledLogin,
-  StyledLink,
-  StyledCursor,
-  StyledLi,
-} from "./index.styles"
+import { NavContainer, StyledLogin, StyledLink, StyledLi } from "./index.styles"
 import { useContext } from "react"
 import { TransactionContext } from "../../context/TransactionContext"
 
@@ -18,7 +12,7 @@ export const Nav = ({ checked, setChecked, isLoggedIn }) => {
   return (
     <NavContainer>
       <StyledLink to={ROUTER_PATHS.HOME}>
-        <img src={require("../../assets/bmw.png")} />
+        <img src={require("../../assets/bmw.png")} alt="logo" />
       </StyledLink>
 
       <div className="title">Car Dealership</div>
