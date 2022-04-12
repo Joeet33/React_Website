@@ -40,10 +40,13 @@ export const PaymentForm = () => {
     if (!error) {
       try {
         const { id } = paymentMethod
-        const response = await axios.post("https://dissotrial.herokuapp.com/", {
-          amount: 1000,
-          id,
-        })
+        const response = await axios.post(
+          "https://dissotrial.herokuapp.com/payment",
+          {
+            amount: 1000,
+            id,
+          }
+        )
 
         if (response.data.success) {
           console.log("Successful payment")
