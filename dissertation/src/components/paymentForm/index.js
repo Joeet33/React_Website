@@ -41,7 +41,7 @@ export const PaymentForm = () => {
       try {
         const { id } = paymentMethod
         const response = await axios.post(
-          "https://dissotrial.herokuapp.com/payment",
+          "https://up931673.herokuapp.com/payment",
           {
             amount: 1000,
             id,
