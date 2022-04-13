@@ -3,7 +3,8 @@ import { LoggedInContainer } from "./index.styles"
 import { useState } from "react"
 import { useContext } from "react"
 import { TransactionContext } from "../../context/TransactionContext"
-import { TransactionsForm } from "./index.styles"
+import { Navigate } from "react-router"
+import { ROUTER_PATHS } from "../../routerPaths"
 
 export const Web3Connected = () => {
   const { startPayment } = useContext(TransactionContext)
@@ -20,32 +21,6 @@ export const Web3Connected = () => {
     })
   }
 
-  const ErrorMessage = ({ message }) => {
-    if (!message) return null
-
-    return (
-      <div>
-        <label>{message}</label>
-      </div>
-    )
-  }
-
-  const TxList = ({ txs }) => {
-    if (txs.length === 0) return null
-
-    return (
-      <>
-        {txs.map((item) => (
-          <div key={item}>
-            <div>
-              <label>{item.hash}</label>
-            </div>
-          </div>
-        ))}
-      </>
-    )
-  }
-
   return (
     <>
       <LoggedInContainer>
@@ -58,9 +33,15 @@ export const Web3Connected = () => {
         <>
           <button onClick={handleSubmit}>
             Pay Now
-            <TxList txs={txs} />
+            {txs.length === 0 ? null : (
+              <Navigate to={ROUTER_PATHS.PAYMENTSUCCESS} />
+            )}
           </button>
-          <ErrorMessage message={error} />
+          {!error ? null : (
+            <div>
+              <label>{error}</label>
+            </div>
+          )}
         </>
       </LoggedInContainer>
     </>
