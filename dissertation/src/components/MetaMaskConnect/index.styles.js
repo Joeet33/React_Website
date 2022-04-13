@@ -34,4 +34,19 @@ export const StyledButton = styled.button`
     padding: 2vw;
     font-size: 1.2vw;
   }
+
+  div {
+    @media (max-width: 500px) {
+      display: none;
+    }
+  }
+
+  img {
+    @media (min-width: 500px) {
+      display: none;
+    }
+    @media (max-width: 500px) {
+      width: 3vw;
+    }
+  }
 `
