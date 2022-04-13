@@ -52,4 +52,9 @@ export const StyledLink = styled(Link)`
   text-align: center;
   padding: 1.5vh;
   text-decoration: none;
+
+  &:hover {
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    transform: translateY(-3px);
+  }
 `

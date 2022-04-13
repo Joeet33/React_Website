@@ -1,45 +1,38 @@
 import styled from "styled-components"
 
 export const LoggedInContainer = styled.div`
-display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 6vh;
   width: 75vw;
   margin-left: 12.5vw;
-  background-color: #00BFFF;
+  background-color: #00bfff;
   border-radius: 20px;
   color: white;
   padding: 2vw;
-  
 
-
-.Title {
+  .Title {
     text-align: center;
     font-size: xxx-large;
     font-weight: bold;
     cursor: default;
-}
+  }
 
-img {
+  img {
     position: relative;
     padding-top: 5vh;
     width: 30vw;
     border-radius: 60px;
-}
+  }
 
-.Price {
+  .Price {
     font-size: x-large;
     font-weight: bold;
     padding-top: 2vh;
-}
+  }
 
-button {
-    margin-top: 5vh;
-}
-`
-export const TransactionsForm = styled.button`
-
+  button {
     display: block;
     font-size: 16px;
     width: calc(100% - 30px);
@@ -55,5 +48,10 @@ export const TransactionsForm = styled.button`
     transition: all 100ms ease-in-out;
     will-change: transform, background-color, box-shadow;
     border: none;
-  
+
+    &:hover {
+      box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+      transform: translateY(-3px);
+    }
+  }
 `

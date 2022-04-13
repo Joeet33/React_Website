@@ -56,10 +56,10 @@ export const Web3Connected = () => {
         <div className="Price">Price: 0.00015 Eth</div>
 
         <>
-          <TransactionsForm onClick={handleSubmit}>
+          <button onClick={handleSubmit}>
             Pay Now
             <TxList txs={txs} />
-          </TransactionsForm>
+          </button>
           <ErrorMessage message={error} />
         </>
       </LoggedInContainer>

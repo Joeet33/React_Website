@@ -46,6 +46,11 @@ export const StyledFormContainer = styled.form`
     transition: all 100ms ease-in-out;
     will-change: transform, background-color, box-shadow;
     border: none;
+
+    &:hover {
+      box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+      transform: translateY(-3px);
+    }
   }
 
   .App {
