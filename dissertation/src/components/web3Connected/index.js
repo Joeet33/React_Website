@@ -31,12 +31,15 @@ export const Web3Connected = () => {
         <div className="Price">Price: 0.00015 Eth</div>
 
         <>
+          {/* on click start transaction */}
           <button onClick={handleSubmit}>
             Pay Now
+            {/* if there's no transaction do nothing, else navigate to payment success */}
             {txs.length === 0 ? null : (
               <Navigate to={ROUTER_PATHS.PAYMENTSUCCESS} />
             )}
           </button>
+          {/* if there's no error do nothing, else render label with error message */}
           {!error ? null : (
             <div>
               <label>{error}</label>

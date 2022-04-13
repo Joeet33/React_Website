@@ -25,12 +25,13 @@ export const Nav = ({ checked, setChecked, isLoggedIn }) => {
               onChange={(e) => setChecked(e)}
               inputProps={{ "aria-label": "controlled" }}
             />
+            {/* if checked is true render "Web3", else render "Web2" */}
             <StyledLi>{checked ? "Web3" : "Web2"}</StyledLi>
           </li>
           <li className="navItems">
             <Link to={ROUTER_PATHS.SHOP}>Shop</Link>
           </li>
-
+          {/* if checked and account not connected show the connect button, if checked and not logged in show login button */}
           {checked
             ? !currentAccount && <Connect />
             : !isLoggedIn && (

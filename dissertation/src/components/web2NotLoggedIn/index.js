@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { StyledLogin } from "../nav/index.styles"
 import { ROUTER_PATHS } from "../../routerPaths"
 
-export const NotLoggenIn = () => {
+export const Web2NotLoggenIn = () => {
   return (
     <StyleContainer>
       <div className="Warning">

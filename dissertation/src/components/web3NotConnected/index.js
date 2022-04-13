@@ -1,7 +1,7 @@
 import { StyleContainer } from "./index.styles"
 import { Connect } from "../web3MetaMask"
 
-export const NotConnected = () => {
+export const Web3NotConnected = () => {
   return (
     <StyleContainer>
       <div className="Warning">

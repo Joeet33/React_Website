@@ -8,7 +8,8 @@ export const Connect = () => {
   const { connectWallet } = useContext(TransactionContext)
   return (
     <StyledButton onClick={connectWallet}>
-      <div>Connect</div>{" "}
+      <div>Connect</div>
+      {/* show metamask image in mobile view */}
       <img src={require("../../assets/metamask.png")} alt="metamask" />
     </StyledButton>
   )

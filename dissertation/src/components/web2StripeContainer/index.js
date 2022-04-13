@@ -4,6 +4,7 @@ import React from "react"
 import { PaymentForm } from "../web2StripeForm"
 import { PaymentContainer } from "./index.styles"
 
+//public key from stripe
 const PUBLIC_KEY =
   "pk_test_51KktCTDl7A2zTF5L30nqLZCh0Vz3i3vCk9q4YoLxq1u17rmP2DLQdJVow0xBuYmS0RRUgmiHhVPYQo9VXS3eesMx00Cq0P22dS"
 

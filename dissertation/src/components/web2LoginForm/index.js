@@ -11,9 +11,9 @@ export const Login = ({ loginState }) => {
 
   const handleLogin = (e) => {
     e.preventDefault()
+    // .replace(/"/g,"") is used to remove the double quotes for the string
     let pass = localStorage.getItem("SubmissionPassword").replace(/"/g, "")
     let mail = localStorage.getItem("SubmissionEmail").replace(/"/g, "")
-    // .replace(/"/g,"") is used to remove the double quotes for the string
 
     if (!emaillog || !passwordlog) {
       loginState(false)

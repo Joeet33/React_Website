@@ -10,13 +10,14 @@ export const PaymentForm = () => {
   const stripe = useStripe()
   const elements = useElements()
 
+  // when form is submitted api is called to check paymentmethod
   const handleSubmit = async (e) => {
     e.preventDefault()
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: "card",
       card: elements.getElement(CardElement),
     })
-
+    // if there is no error post response from server
     if (!error) {
       try {
         const { id } = paymentMethod
@@ -42,6 +43,7 @@ export const PaymentForm = () => {
 
   return (
     <>
+      {/* if success is false render payment form, else navigate to paymentSuccess */}
       {!success ? (
         <StyledFormContainer onSubmit={handleSubmit}>
           <fieldset className="FormGroup">

@@ -13,6 +13,7 @@ export const Main = ({ checked }) => {
         <div className="Title">Car For Sale</div>
       </LoggedInContainer>
       <LoggedInContainer>
+        {/* if checked and connected to metamask show wallet address */}
         {checked
           ? currentAccount && <h3>Wallet Address: {currentAccount} </h3>
           : null}
