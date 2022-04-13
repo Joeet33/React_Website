@@ -1,5 +1,5 @@
 import { StyleContainer } from "./index.styles"
-import { Connect } from "../MetaMaskConnect"
+import { Connect } from "../web3MetaMask"
 
 export const NotConnected = () => {
   return (

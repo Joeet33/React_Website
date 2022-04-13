@@ -1,7 +1,7 @@
 import { Switch } from "@material-ui/core"
 import { Link } from "react-router-dom"
 import { ROUTER_PATHS } from "../../routerPaths"
-import { Connect } from "../MetaMaskConnect"
+import { Connect } from "../web3MetaMask"
 import { NavContainer, StyledLogin, StyledLink, StyledLi } from "./index.styles"
 import { useContext } from "react"
 import { TransactionContext } from "../../context/TransactionContext"

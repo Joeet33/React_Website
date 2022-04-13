@@ -1,10 +1,10 @@
 import React, { useState } from "react"
-import { SignupContainer, StyledRegisterButton } from "./index.styles"
+import { RegisterContainer, StyledRegisterButton } from "./index.styles"
 import { TextField } from "@material-ui/core"
 import { ROUTER_PATHS } from "../../routerPaths"
 import { Link, useNavigate } from "react-router-dom"
 
-export const Signup = () => {
+export const Register = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const navigate = useNavigate()
@@ -23,7 +23,7 @@ export const Signup = () => {
 
   return (
     <>
-      <SignupContainer onSubmit={handleFormSubmit}>
+      <RegisterContainer onSubmit={handleFormSubmit}>
         <h1>Register</h1>
 
         <TextField
@@ -52,7 +52,7 @@ export const Signup = () => {
             Login?
           </Link>
         </div>
-      </SignupContainer>
+      </RegisterContainer>
     </>
   )
 }

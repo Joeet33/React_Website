@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react"
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
 import { ROUTER_PATHS } from "./routerPaths"
-import { Nav } from "./components/navBar"
+import { Nav } from "./components/nav"
 import { Main } from "./components/main/"
 import { Layout } from "./components/layout"
-import { Login } from "./components/loginForm"
+import { Login } from "./components/web2LoginForm"
 import { Shop } from "./components/shop"
-import { StripeContainer } from "./components/stripe_container"
+import { StripeContainer } from "./components/web2StripeContainer"
 import { PaymentSuccess } from "./components/paymentSuccess"
-import { Signup } from "./components/signup"
+import { Register } from "./components/web2RegisterForm"
 
 export const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
@@ -60,7 +60,7 @@ export const App = () => {
           />
           <Route
             path={ROUTER_PATHS.SIGNUP}
-            element={!isLoggedIn ? <Signup /> : <Navigate to="/" />}
+            element={!isLoggedIn ? <Register /> : <Navigate to="/" />}
           />
           <Route
             path={ROUTER_PATHS.PAYMENTSUCCESS}

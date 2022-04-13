@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const SignupContainer = styled.form`
+export const RegisterContainer = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
